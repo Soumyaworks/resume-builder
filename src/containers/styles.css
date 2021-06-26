@@ -2,13 +2,12 @@ body {
   margin: 0;
   padding: 0;
   background: #f2f3f4;
-  width: 98vw;
+  width: 99vw;
 }
 
 .app {
   display: flex;
   min-height: 100vh;
-  min-width: 100vw;
   position: relative;
 }
 

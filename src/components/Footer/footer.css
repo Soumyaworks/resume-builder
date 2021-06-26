@@ -1,9 +1,8 @@
 .Footer {
     box-sizing: border-box;
     min-height: 64px;
-    width: 100%;
     padding: 1rem 20px;
-  
+    width: 100%;
     position: absolute;
     bottom: 0;
   
