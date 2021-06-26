@@ -6,7 +6,7 @@ import AdditionalSkills from "./AdditionalSkills";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import Button from "@material-ui/core/Button";
 import myClasses from "./Left.module.css";
-import logo from "../../assets/default.png";
+import logo from "../../assets/Default.PNG";
 import { ResumeContext } from "../../contexts/ResumeContext";
 import { makeStyles } from "@material-ui/core/styles";
 

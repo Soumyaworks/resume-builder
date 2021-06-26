@@ -50,15 +50,7 @@ return(<footer  className="Footer">
 
       <section className="Footer__Items">
         <a
-          href="https://youtu.be/JFjvVmvC3pQ"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="Footer__Link"
-        >
-          Demo
-        </a>
-        <a
-          href="https://github.com/ramiz-rahman/sort-visualizer"
+          href="https://github.com/Prasun-Acharjee/resume-builder"
           target="_blank"
           rel="noopener noreferrer"
           className="Footer__Link"

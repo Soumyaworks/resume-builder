@@ -5,7 +5,7 @@ import "./styles.css";
 import ResumeContextProvider from "../contexts/ResumeContext";
 import { BrowserRouter, Route, Switch, Link } from "react-router-dom";
 import myClasses from "./../components/Left/Left.module.css";
-import logo from "../../src/assets/default.png";
+import logo from "../../src/assets/Default.PNG";
 import thumbn from "../../src/assets/templateA.png";
 import { makeStyles } from "@material-ui/core/styles";
 import Button from "@material-ui/core/Button";
