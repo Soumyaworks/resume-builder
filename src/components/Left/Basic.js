@@ -87,7 +87,7 @@ function Left() {
     <div className="left">
       <div className={myClasses.headerLeft}>
         <div styles={{ flexGrow: 2 }}>
-          <Link to="/" style={{ display: "inline" }}>
+          <Link to="/home" style={{ display: "inline" }}>
             <img src={logo} alt="logo" />
           </Link>
         </div>
@@ -100,28 +100,28 @@ function Left() {
             <Button
               className={classes.headerLink}
               component={Link}
-              to="/basic/header"
+              to="/home/basic/header"
             >
               Header
             </Button>
             <Button
               className={classes.headerLink}
               component={Link}
-              to="/basic/professional"
+              to="/home/basic/professional"
             >
               Experience
             </Button>
             <Button
               className={classes.headerLink}
               component={Link}
-              to="/basic/education"
+              to="/home/basic/education"
             >
               Education
             </Button>
             <Button
               className={classes.headerLink}
               component={Link}
-              to="/basic/additional"
+              to="/home/basic/additional"
             >
               Skills
             </Button>
@@ -132,16 +132,16 @@ function Left() {
               {/* A <Switch> looks through its children <Route>s and
             renders the first one that matches the current URL. */}
               <Switch>
-                <Route path="/basic/header">
+                <Route path="/home/basic/header">
                   <Header />
                 </Route>
-                <Route path="/basic/professional">
+                <Route path="/home/basic/professional">
                   <Professional />
                 </Route>
-                <Route path="/basic/education">
+                <Route path="/home/basic/education">
                   <Education />
                 </Route>
-                <Route path="/basic/additional">
+                <Route path="/home/basic/additional">
                   <AdditionalSkills />
                 </Route>
               </Switch>

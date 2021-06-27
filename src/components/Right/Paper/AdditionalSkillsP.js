@@ -12,7 +12,7 @@ function AdditionalSkillsP() {
   } else {
     contentUse = content;
   }
-
+  const { templateType } = content;
   //If there is no data, the Title of the section will not be displayed
   let title;
   if (contentUse.additional.length === 0) {
@@ -33,7 +33,13 @@ function AdditionalSkillsP() {
     }
   });
   return (
-    <div className={classes.professionalResume}>
+    <div
+      className={
+        templateType === "mordern"
+          ? classes.professionalResumeMordern
+          : classes.professionalResume
+      }
+    >
       <div className="">
         {title}
         <ul>{bulletsData}</ul>

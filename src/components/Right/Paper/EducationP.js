@@ -35,9 +35,15 @@ function EducationP() {
       </ul>
     );
   }
-
+  const { templateType } = content;
   return (
-    <div className={classes.professionalResume}>
+    <div
+      className={
+        templateType === "mordern"
+          ? classes.professionalResumeMordern
+          : classes.professionalResume
+      }
+    >
       <div className="">
         {title}
         <p>

@@ -1,6 +1,6 @@
 import React, { createContext, useState, useEffect } from "react";
 import fakeData from "../utils/fake_data";
-
+import firebase from "../firebase";
 export const ResumeContext = createContext();
 
 const ResumeContextProvider = (props) => {
@@ -11,6 +11,7 @@ const ResumeContextProvider = (props) => {
       professional: { desc1: ["", "", ""], desc2: ["", "", ""] },
       education: {},
       additional: [],
+      templateType: "",
     }
   );
 
@@ -18,6 +19,10 @@ const ResumeContextProvider = (props) => {
 
   //Used to "Right" components know when to use the original state or the fake one (for the "example")
   const [control, setControl] = useState(false);
+
+  function updateTemplateType(data) {
+    setContent({ ...content, templateType: data });
+  }
 
   function updateHeaderData(data) {
     setContent({ ...content, header: data });
@@ -49,8 +54,33 @@ const ResumeContextProvider = (props) => {
       additional: [],
     });
   }
+
+  useEffect(() => {
+    const token = localStorage.getItem("token");
+    const wordRef = firebase.default.database().ref();
+    wordRef
+      .child(token)
+      .get()
+      .then((snapshot) => {
+        if (snapshot.exists()) {
+          let retrieveData = JSON.parse(snapshot.val());
+          setContent(retrieveData);
+        } else {
+          console.log("No data available");
+        }
+      })
+      .catch((error) => {
+        console.error(error);
+      });
+  }, []);
+
   useEffect(() => {
     localStorage.setItem("dataLocal", JSON.stringify(content));
+    const token = localStorage.getItem("token");
+    if (token) {
+      const itemref = firebase.default.database().ref(token);
+      itemref.set(JSON.stringify(content));
+    }
   }, [content]);
 
   return (
@@ -66,6 +96,7 @@ const ResumeContextProvider = (props) => {
         updateAdditionalData,
         addFakeData,
         removeFakeData,
+        updateTemplateType,
       }}
     >
       {/* This refers to the children that this provider/components wraps. */}

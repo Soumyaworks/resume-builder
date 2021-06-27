@@ -30,6 +30,22 @@ h3 {
   margin-left: 94px;
 }
 
+.professionalResumeMordern {
+  display: flex;
+  flex-direction: column;
+  margin-left: 94px;
+  color: #6a67a8;
+}
+
+.headerResumeMordern {
+  display: flex;
+  flex-direction: column;
+  text-align: end;
+  width: 100%;
+  align-items: center;
+  color: #6a67a8;
+}
+
 .dividerRight {
   margin-top: 25px;
   margin-bottom: 25px;

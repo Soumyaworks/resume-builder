@@ -5,7 +5,7 @@ import { ResumeContext } from "../../../contexts/ResumeContext";
 function ProfessionalP() {
   const { content, control, contentFake } = useContext(ResumeContext);
 
-    //If the "control" is TRUE - use "Fake State" to show the example on the page
+  //If the "control" is TRUE - use "Fake State" to show the example on the page
   let contentUse;
   if (control) {
     contentUse = contentFake;
@@ -41,8 +41,16 @@ function ProfessionalP() {
     }
   });
 
+  const { templateType } = content;
+
   return (
-    <div className={classes.professionalResume}>
+    <div
+      className={
+        templateType === "mordern"
+          ? classes.professionalResumeMordern
+          : classes.professionalResume
+      }
+    >
       <div className="">
         {title}
         <p>

@@ -19,10 +19,16 @@ function HeaderP() {
   } else {
     divider = "";
   }
-
+  const { templateType } = content;
   return (
     <div>
-      <div className={classes.headerResume}>
+      <div
+        className={
+          templateType === "mordern"
+            ? classes.headerResumeMordern
+            : classes.headerResume
+        }
+      >
         <div className={classes.contentHeader}>
           <h1 className={classes.h1Name}>{contentUse.header.name}</h1>
           <p>
