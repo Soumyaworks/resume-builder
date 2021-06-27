@@ -6,7 +6,7 @@ export const ResumeContext = createContext();
 const ResumeContextProvider = (props) => {
   //If there is no data stored in localStorage, then use the default object.
   const [content, setContent] = useState(
-    JSON.parse(localStorage.getItem("dataLocal")) || {
+    JSON.parse(localStorage.getItem("dataLocal") || null) || {
       header: {},
       professional: { desc1: ["", "", ""], desc2: ["", "", ""] },
       education: {},

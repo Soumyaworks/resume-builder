@@ -35,7 +35,17 @@ function Right() {
   const history = useHistory();
   const handleDeleteDate = (event) => {
     event.preventDefault();
-    localStorage.clear();
+    // localStorage.clear();
+    localStorage.setItem(
+      "dataLocal",
+      JSON.stringify({
+        header: {},
+        professional: { desc1: ["", "", ""], desc2: ["", "", ""] },
+        education: {},
+        additional: [],
+        templateType: "",
+      })
+    );
     setContent({
       header: {},
       professional: { desc1: ["", "", ""], desc2: ["", "", ""] },

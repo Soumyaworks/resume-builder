@@ -125,7 +125,7 @@ class SignUpForm extends Component {
         >
           Submit
         </Button>
-        {error && <p>{error.message}</p>}
+        {error && <p>{error}</p>}
       </form>
     );
   }

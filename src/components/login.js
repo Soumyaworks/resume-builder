@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import firebaseApp from "../firebase";
 import { Link, Redirect } from "react-router-dom";
-import { TextField, Button } from "@material-ui/core";
+import { TextField, Button, CircularProgress } from "@material-ui/core";
 // import * as ROUTES from "../../constants/routes";
 const INITIAL_STATE = {
   email: "",
@@ -33,11 +33,12 @@ const LoginPage = (props) => {
 class LoginForm extends Component {
   constructor(props) {
     super(props);
-    this.state = { ...INITIAL_STATE };
+    this.state = { ...INITIAL_STATE, loading: false };
   }
 
   onSubmit = (event) => {
     event.preventDefault();
+    this.setState({ loading: true });
     firebaseApp.default
       .auth()
       .signInWithEmailAndPassword(this.state.email, this.state.passwordOne)
@@ -54,6 +55,9 @@ class LoginForm extends Component {
         var errorMessage = error.message;
         this.setState({ error: errorMessage });
         console.log("err", error);
+      })
+      .finally(() => {
+        this.setState({ loading: false });
       });
   };
 
@@ -98,10 +102,15 @@ class LoginForm extends Component {
           type="submit"
           variant="contained"
           color="primary"
+          style={{ height: 40, width: 80 }}
         >
-          Submit
+          {this.state.loading ? (
+            <CircularProgress color="white" size={20} />
+          ) : (
+            "Submit"
+          )}
         </Button>
-        {error && <p>{error.message}</p>}
+        {error && <p>{error}</p>}
       </form>
     );
   }
