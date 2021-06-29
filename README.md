@@ -11,4 +11,4 @@ The application is reduced as much as possible to avoid errors while entering th
 * Upon selecion, sample resumes will be displayed
 * After filling all the resume details like education, experience, skills etc. the resume will be generated
 * Button is provided to download the resume in the pdf format <br>
-Link : https://resume-builder-b56b4.web.app/home
+* Link : https://resume-builder-b56b4.web.app/home
